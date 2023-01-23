@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./Card";
 const Main=()=>{
     return(
         <>
@@ -27,6 +28,16 @@ const Main=()=>{
                         <option value="2">newest</option>
                     </select>
                 </div>
+            </div>
+            
+            <div className="container">
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
             </div>
         </>
     )

@@ -34,6 +34,7 @@ html{
 }
 
 .search input{
+    padding: 0 1.5rem;
     outline: 0;
     border: 0;
     width: 832px;
@@ -43,8 +44,8 @@ html{
 }
 
 .search button{
-    outline: 0;
-    border: 0;
+    outline: none;
+    border: none;
     height: 62px;
     width: 62px;
     background-color: #fff;
@@ -55,7 +56,7 @@ html{
 }
 
 .options{
-    padding-bottom: 50px;
+    padding-bottom: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +73,7 @@ html{
     width: 330px;
     height: 58px;
     font-size: 30px;
-    padding: 0 0.5rem;
+    padding: 0 1.5rem;
     outline: 0;
     border: 0;
     background-color: #fff;
@@ -80,4 +81,55 @@ html{
 
 .options select:hover{
     background-color: rgb(212, 212, 212);
+}
+
+.container{
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(4,minmax(200px, 0.5fr));
+    grid-gap: 20px;
+    box-sizing: border-box;
+}
+
+.card{
+    background-color: rgb(212, 212, 212);
+    padding: 0.5rem;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.bottom{
+    padding: 0 1rem;
+}
+
+.pic{
+    text-align: center;
+}
+
+.pic img{
+    box-shadow: 10px 10px 8px rgba(0,0,0,0.6);
+    width: auto;
+    height: 313px;
+}
+
+.card .bottom{
+    display: flex;
+    flex-direction: column;
+}
+
+.card .bottom .category{
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.card .bottom .title{
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.card .bottom .author{
+    font-size: 28px;
+    margin-bottom: 10px;
 }
