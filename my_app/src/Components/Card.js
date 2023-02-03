@@ -1,15 +1,28 @@
 import React from "react";
-const Card=()=>{
-    return(
+const Card = ({ book }) => {
+    console.log(book);
+    return (
         <>
-            <div className="card">
-                <p className="pic"><img src="./images/book.png" alt="" /></p>
-                <div className="bottom">
-                    <p className="category">Biography</p>
-                    <h3 className="title">React Js</h3>
-                    <p className="author">Pavel Novikov</p>
-                </div>
-            </div>
+            {
+                book.map((item) => {
+                    let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
+                    if(thumbnail != undefined)
+                    {
+                        return (
+                            <>
+                            <div className="card">
+                                <p className="pic"><img src={thumbnail} alt="" /></p>
+                                <div className="bottom">
+                                    <p className="category">{item.volumeInfo.categories}</p>
+                                    <h3 className="title">{item.volumeInfo.title}</h3>
+                                    <p className="author">{item.volumeInfo.authors}</p>
+                                </div>
+                            </div>
+                            </>
+                        )
+                    } 
+                })
+            }
         </>
     )
 }
