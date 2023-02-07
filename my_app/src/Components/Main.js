@@ -41,23 +41,26 @@ const Main = () => {
     function loadMore2() {
         setStart(start + 30)
     }
+
     function scroller() {
         window.scrollTo(0, 0);
     }
+
     return (
 
         <form onSubmit={handleSubmit}>
             <div className="header">
+                <img class="demo-bg" src="./img/back.jpeg" alt=""></img>
                 <div className="row1">
                     <h1>Search for books</h1>
                 </div>
                 <div className="search">
-                    <input onChange={handleChange} type="text" placeholder="Enter Your Book Name"/>
+                    <input onChange={handleChange} type="text" placeholder="Enter book name" />
                     <button onClick={() => { setBooks([]); setStart(0); scroller() }}><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 <div className="options">
                     <p>Categories</p>
-                    <select name="option_1" onChange={(e) => { setCateg(e.target.value); setBooks([]); setStart(0); scroller() }} onClick={handleSubmit}>
+                    <select name="option_1" onChange={(e) => { setCateg(e.target.value) }}>
                         <option value="">all</option>
                         <option value=":subject:art">art</option>
                         <option value=":subject:biography">biography</option>
@@ -67,7 +70,7 @@ const Main = () => {
                         <option value=":subject:poetry">poetry</option>
                     </select>
                     <p>Sorting by</p>
-                    <select name="option_2" onChange={(e) => { setOrder(e.target.value); setBooks([]); setStart(0); scroller() }} onClick={handleSubmit}>
+                    <select name="option_2" onChange={(e) => { setOrder(e.target.value) }}>
                         <option value="relevance">relevance</option>
                         <option value="newest">newest</option>
                     </select>
@@ -84,7 +87,7 @@ const Main = () => {
                 }
             </div>
 
-            {isbooks ? <Loadmore loadMore2={loadMore2} /> : null}
+            {isbooks && !isloading ? <Loadmore loadMore2={loadMore2} /> : null}
         </form>
     )
 }

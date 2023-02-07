@@ -1,7 +1,10 @@
 import React from "react";
-const Loadmore =({loadMore2})=>{
+import './style.css';
+const Loadmore = ({ loadMore2 }) => {
     return (
-        <button onClick = {loadMore2} className='btn'>Load more</button>
+        <div className="lm">
+            <button onClick={loadMore2} className='button-55'>Load more</button>
+        </div>
     )
 }
 export default Loadmore;
