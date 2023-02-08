@@ -22,7 +22,7 @@ const Card = ({ book }) => {
                                         <p className="author" value="">{item.volumeInfo.authors !== undefined ? String(item.volumeInfo.authors) : ''}</p>
                                     </div>
                                 </div>
-                                <Modal show={show} item={bookItem} />
+                                <Modal show={show} item={bookItem} onClose={()=>setShow(false)}/>
                             </>
                         )
                     }
