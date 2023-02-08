@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "./Modal";
 const Card = ({ book }) => {
-    console.log(book);
+
+    const [show, setShow] = useState(false);
+    const [bookItem, setItem] = useState();
+
     return (
         <>
             {
@@ -11,7 +14,7 @@ const Card = ({ book }) => {
                     if (thumbnail != undefined) {
                         return (
                             <>
-                                <div className="card">
+                                <div className="card" id="card" onClick={() => { setShow(true); setItem(item) }}>
                                     <p className="pic"><img src={thumbnail} alt="" /></p>
                                     <div className="bottom">
                                         <p className="category" value="">{item.volumeInfo.categories !== undefined ? String(item.volumeInfo.categories) : 'Unknown'}</p>
@@ -19,7 +22,7 @@ const Card = ({ book }) => {
                                         <p className="author" value="">{item.volumeInfo.authors !== undefined ? String(item.volumeInfo.authors) : ''}</p>
                                     </div>
                                 </div>
-                                <Modal />
+                                <Modal show={show} item={bookItem} />
                             </>
                         )
                     }
